@@ -7,6 +7,8 @@ if (isset($_GET["enter"])) {
     $movies = "$movie$filmName";
     echo $movies;
     echo "<br>";
+    echo $type;
+    echo "<br>";
     $contents = file_get_contents($movies);
     $jsonMovies = json_decode($contents, true);
     // var_dump($jsonMovies);
