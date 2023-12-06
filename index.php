@@ -36,11 +36,9 @@ if (isset($_GET["enter"])) {
         <?php foreach ($jsonMovies["Search"] as $row) { ?>
             <div>
                 <img src="<?= $row['Poster'] ?>" alt="">
+                <a href="movie?<?= $row["Title"] ?>"><?= $row['Title'] ?></a>
                 <p>
-                    <?= $row["Title"] ?>
-                </p>
-                <p>
-                    <?= $row["Type"] ?>
+                    jenis <?= $row["Type"] ?>
                 </p>
             </div>
         <?php
