@@ -1,7 +1,8 @@
 <?php
 
-$movie = "http://www.omdbapi.com/?apikey=f4196ce9&s=";
+$movie = "http://www.omdbapi.com/?apikey=f4196ce9&type=movie&s=";
 if (isset($_GET["enter"])) {
+    $type = $_GET["Type"];
     $filmName = $_GET["film"];
     $movies = "$movie$filmName";
     echo $movies;
@@ -29,20 +30,30 @@ if (isset($_GET["enter"])) {
     <form action="">
         <h1>
             <p>selamat datang</p>
+            <select name="Type" id="Type">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+            </select>
             <label for="film">search film</label>
             <input type="text" name="film" id="film">
             <button type="submit" name="enter">Search</button>
         </h1>
         <?php foreach ($jsonMovies["Search"] as $row) { ?>
-            <div>
-                <img src="<?= $row['Poster'] ?>" alt="">
-                <a href="movie?<?= $row["Title"] ?>"><?= $row['Title'] ?></a>
-                <p>
-                    jenis <?= $row["Type"] ?>
-                </p>
-            </div>
-        <?php
-        } ?>
+            <?php if ($row["Type"] = "movie") { ?>
+                <div>
+                    <img src="<?= $row['Poster'] ?>" alt="">
+                    <a href="movie?<?= $row["Title"] ?>"></a>
+                    <p><a href="movie.php?imdbID=<?= $row["imdbID"] ?>"><?= $row["Title"] ?></a></p>
+                    <br>
+                    <p>
+                        jenis <?= $row["Type"] ?>
+                    </p>
+                </div>
+            <?php } else {
+                continue;
+            } ?>
+
+        <?php } ?>
 
     </form>
     <?php
