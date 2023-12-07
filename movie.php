@@ -5,10 +5,6 @@ $details = file_get_contents($idIMDB);
 $jsonID = json_decode($details, true);
 
 
-
-
-
-
 ?>
 <?php
 
@@ -28,14 +24,19 @@ $jsonID = json_decode($details, true);
 <body>
     <table border="1">
         <tr>
+            <th>Cover</th>
             <th>tittle</th>
             <th>Year</th>
+            <th>Plot</th>
         </tr>
         <tr>
+            <td><img src="<?= $jsonID["Poster"] ?>" alt=""></td>
             <td><?= $jsonID["Title"] ?></td>
             <td><?= $jsonID["Year"] ?></td>
+            <td><?= $jsonID["Plot"] ?></td>
         </tr>
     </table>
+
 
 </body>
 

@@ -65,7 +65,8 @@ if (isset($_GET["enter"])) {
     // isset($jsonMovies);
     echo count($jsonMovies["Search"]);
     ?>
-
+    <?= $jsonMovies["totalResults"] ?>
+    <?= $jsonMovies["Response"] ?>
 </body>
 
 </html>
