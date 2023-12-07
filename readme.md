@@ -9,8 +9,9 @@
 
 ## instalation
 
-1. API Key :
-   [OMDb API](https://www.omdbapi.com/)
+1.  Clone the repository:
+<!-- 1. API Key :
+   [OMDb API](https://www.omdbapi.com/) -->
 
 ```bash
    git clone https://github.com/ciblekrangers/phpApi.git
