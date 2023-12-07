@@ -7,6 +7,8 @@
 
 ## SIMPLE Website Film Using OMDb API
 
+## instalation
+
 1. API Key :
    """bash
    http://www.omdbapi.com/?apikey=f4196ce9
