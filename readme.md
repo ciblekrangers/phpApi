@@ -10,4 +10,4 @@
 ## instalation
 
 1. API Key :
-   [a link](http://www.omdbapi.com/?apikey=f4196ce9)
+   [OMDb API](https://www.omdbapi.com/)
