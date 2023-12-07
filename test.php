@@ -1,3 +1,15 @@
+<?php
+$mov = "http://www.omdbapi.com/?apikey=f4196ce9";
+
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +29,8 @@
     </form>
     <?php
     if (isset($_GET["submit"])) {
-        echo ($_GET["type"]);
+        $type = ($_GET["type"]);
+        echo "$mov&type=$type";
         # code...
     }
 
