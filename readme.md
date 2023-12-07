@@ -10,6 +10,4 @@
 ## instalation
 
 1. API Key :
-   """bash
-   http://www.omdbapi.com/?apikey=f4196ce9
-   """
+   [a link](http://www.omdbapi.com/?apikey=f4196ce9)
