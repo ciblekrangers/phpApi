@@ -18,3 +18,6 @@
 ```
 
 2. run the xampp that you have
+
+3. navigate to wenPrograming
+   [localhost](localhost/webPrograming)
