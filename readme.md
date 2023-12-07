@@ -9,7 +9,7 @@
 
 ## instalation
 
-1.  Clone the repository:
+1.  Clone the repository into your htdocs:
 <!-- 1. API Key :
    [OMDb API](https://www.omdbapi.com/) -->
 
