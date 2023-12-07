@@ -16,3 +16,5 @@
 ```bash
    git clone https://github.com/ciblekrangers/phpApi.git
 ```
+
+2. Start xampp you have
