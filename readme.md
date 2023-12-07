@@ -12,6 +12,6 @@
 1. API Key :
    [OMDb API](https://www.omdbapi.com/)
 
-'''bash
-git clone www.github.com
-'''
+```bash
+   git clone https://github.com/nama-pengguna/nama-repository.git
+```
