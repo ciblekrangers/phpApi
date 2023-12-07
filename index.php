@@ -1,17 +1,17 @@
 <?php
 
-$movie = "http://www.omdbapi.com/?apikey=f4196ce9&";
+$movie = "http://www.omdbapi.com/?apikey=f4196ce9";
 if (isset($_GET["enter"])) {
     $type = $_GET["Type"];
-    if ($type = "movie") {
-        $type = "type=movie";
-    } elseif ($type = "series") {
-        $type = "type=series";
-    } else {
-        echo "none";
-    }
+    // if ($type = "movie") {
+    //     $type = "type=movie";
+    // } elseif ($type = "series") {
+    //     $type = "type=series";
+    // } else {
+    //     echo "none";
+    // }
     $filmName = $_GET["film"];
-    $movies = "$movie$type&s=$filmName";
+    $movies = "$movie&type=$type&s=$filmName";
     echo $movies;
     echo "<br>";
     echo $type;
