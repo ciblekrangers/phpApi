@@ -13,5 +13,5 @@
    [OMDb API](https://www.omdbapi.com/)
 
 ```bash
-   git clone https://github.com/nama-pengguna/nama-repository.git
+   git clone https://github.com/ciblekrangers/phpApi.git
 ```
