@@ -6,3 +6,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/your-username/your-repo-name)](https://github.com/your-username/your-repo-name/network)
 
 ## SIMPLE Website Film Using OMDb API
+
+1. API Key :
+   """bash
+   http://www.omdbapi.com/?apikey=f4196ce9
+   """
