@@ -1,7 +1,20 @@
 <?php
 $movieDetail = $_GET["imdbID"];
+$idIMDB = "http://www.omdbapi.com/?apikey=f4196ce9&i=$movieDetail";
+$details = file_get_contents($idIMDB);
+$jsonID = json_decode($details, true);
+
+
+
+
+
 
 ?>
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +24,18 @@ $movieDetail = $_GET["imdbID"];
     <title>Document</title>
 </head>
 
+
 <body>
-    <?= $movieDetail ?>
+    <table border="1">
+        <tr>
+            <th>tittle</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td><?= $jsonID["Title"] ?></td>
+            <td><?= $jsonID["Year"] ?></td>
+        </tr>
+    </table>
 
 </body>
 

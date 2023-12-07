@@ -12,7 +12,7 @@ if (isset($_GET["enter"])) {
     // }
     $filmName = $_GET["film"];
     $movies = "$movie&type=$type&s=$filmName";
-    echo $movies;
+    // echo $movies;
     echo "<br>";
     echo $type;
     echo "<br>";
@@ -20,7 +20,6 @@ if (isset($_GET["enter"])) {
     $jsonMovies = json_decode($contents, true);
     // var_dump($jsonMovies);
     // if
-
 }
 
 ?>
