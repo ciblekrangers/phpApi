@@ -17,4 +17,4 @@
    git clone https://github.com/ciblekrangers/phpApi.git
 ```
 
-2. Start xampp you have
+2. run the xampp that you have
