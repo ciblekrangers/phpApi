@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 $movieDetail = $_GET["imdbID"];
 $idIMDB = "http://www.omdbapi.com/?apikey=f4196ce9&i=$movieDetail";
 $details = file_get_contents($idIMDB);

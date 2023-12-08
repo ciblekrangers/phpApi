@@ -18,6 +18,8 @@ if (isset($_GET["enter"])) {
     echo "<br>";
     $contents = file_get_contents($movies);
     $jsonMovies = json_decode($contents, true);
+    echo "<br>";
+    // var_dump($jsonMovies);
     // var_dump($jsonMovies);
     // if
 }
@@ -46,27 +48,31 @@ if (isset($_GET["enter"])) {
             <input type="text" name="film" id="film">
             <button type="submit" name="enter">Search</button>
         </h1>
-        <?php foreach ($jsonMovies["Search"] as $row) { ?>
-            <div>
-                <img src="<?= $row['Poster'] ?>" alt="">
-                <a href="movie?<?= $row["Title"] ?>"></a>
-                <p><a href="movie.php?imdbID=<?= $row["imdbID"] ?>"><?= $row["Title"] ?></a></p>
-                <br>
-                <p>
-                    jenis <?= $row["Type"] ?>
-                </p>
-            </div>
+        <?php if ($jsonMovies["Response"] == "False") { ?>
+            <script>
+                alert("   <?= ($jsonMovies["Error"]); ?>")
+            </script>
+            <?php exit; ?>
+        <?php } elseif ($jsonMovies["Response"] == "True") { ?>
+            <?php foreach ($jsonMovies["Search"] as $row) { ?>
+                <?php if ($row["Poster"] != "N/A") {
+                    $image = $row["Poster"];
+                } else {
+                    $image = "http://placehold.it/300x440";
+                }
+                ?>
+                <div>
+                    <img src=" <?= $image ?> " alt="">
+                    <a href="movie?<?= $row["Title"] ?>"></a>
+                    <p><a href="movie.php?imdbID=<?= $row["imdbID"] ?>"><?= $row["Title"] ?></a></p>
+                    <br>
+                    <p>
+                        jenis <?= $row["Type"] ?>
+                    </p>
+                </div>
+            <?php } ?>
         <?php } ?>
-
     </form>
-    <?php
-    echo "<br>";
-    // var_dump($jsonMovies);
-    // isset($jsonMovies);
-    echo count($jsonMovies["Search"]);
-    ?>
-    <?= $jsonMovies["totalResults"] ?>
-    <?= $jsonMovies["Response"] ?>
 </body>
 
 </html>
