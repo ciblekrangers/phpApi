@@ -23,7 +23,7 @@ if (isset($_GET["enter"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOKKO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="itemshop.css" />
+    <!-- <link rel="stylesheet" href="itemshop.css" /> -->
 
     <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
 
@@ -90,27 +90,36 @@ if (isset($_GET["enter"])) {
     <section>
         <!-- start looping movies -->
         <?php if (isset($jsonMovies)) { ?>
-            <div class="container">
-                <?php foreach ($jsonMovies["Search"] as $row) { ?>
-                    <?php if ($row["Poster"] != "N/A") {
-                        $image = $row["Poster"];
-                    } else {
-                        $image = "http://placehold.it/300x440";
-                    } ?>
-                    <div class="movie">
-                        <img src="<?= $image ?>" alt="" /><!-- width="250px" height="300px" -->
-                        <p>
-                            <?= $row["Title"] ?>
-                        </p>
-                        <button>Click Here</button>
-                    </div>
+            <?php if ($jsonMovies["Response"] == "False") { ?>
+                <script>
+                    alert("<?= $jsonMovies["Error"] ?>");
+                </script>
+                </div>
+            <?php } else { ?>
+                <div class="container">
+                    <?php foreach ($jsonMovies["Search"] as $row) { ?>
+                        <?php if ($row["Poster"] != "N/A") {
+                            $image = $row["Poster"];
+                        } else {
+                            $image = "http://placehold.it/300x440";
+                        } ?>
+                        <div class="movie">
+                            <img src="<?= $image ?>" alt="" /><!-- width="250px" height="300px" -->
+                            <p>
+                                <?= $row["Title"] ?>
+                            </p>
+                            <button>Click Here</button>
+                        </div>
+                    <?php }  ?>
                 <?php }  ?>
-            </div>
-        <?php } ?>
-        <!-- end looping movies -->
+
+            <?php } ?>
+            <!-- end looping movies -->
     </section>
 
     <!-- FOOTER -->
+    <?= $jsonMovies["Error"] ?>
+    <?= $jsonMovies["Response"] ?>
     <script src="script.js"></script>
 </body>
 
