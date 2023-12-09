@@ -89,22 +89,24 @@ if (isset($_GET["enter"])) {
     <!-- View -->
     <section>
         <!-- start looping movies -->
-        <div class="container">
-            <?php foreach ($jsonMovies["Search"] as $row) { ?>
-                <?php if ($row["Poster"] != "N/A") {
-                    $image = $row["Poster"];
-                } else {
-                    $image = "http://placehold.it/300x440";
-                } ?>
-                <div class="movie">
-                    <img src="<?= $image ?>" alt="" /><!-- width="250px" height="300px" -->
-                    <p>
-                        <?= $row["Title"] ?>
-                    </p>
-                    <button>Click Here</button>
-                </div>
-            <?php    }  ?>
-        </div>
+        <?php if (isset($jsonMovies)) { ?>
+            <div class="container">
+                <?php foreach ($jsonMovies["Search"] as $row) { ?>
+                    <?php if ($row["Poster"] != "N/A") {
+                        $image = $row["Poster"];
+                    } else {
+                        $image = "http://placehold.it/300x440";
+                    } ?>
+                    <div class="movie">
+                        <img src="<?= $image ?>" alt="" /><!-- width="250px" height="300px" -->
+                        <p>
+                            <?= $row["Title"] ?>
+                        </p>
+                        <button>Click Here</button>
+                    </div>
+                <?php }  ?>
+            </div>
+        <?php } ?>
         <!-- end looping movies -->
     </section>
 

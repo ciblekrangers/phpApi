@@ -1,4 +1,8 @@
 <?php
+if (!isset($_GET["imdbID"])) {
+    header("Location: itemshop.php");
+    exit;
+}
 
 $movie = "http://www.omdbapi.com/?apikey=f4196ce9";
 if (isset($_GET["enter"])) {
