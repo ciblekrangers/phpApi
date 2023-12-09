@@ -46,8 +46,8 @@ if (isset($_GET["enter"])) {
         <form action="">
             <input type="text" name="text" placeholder="Search..." class="input" />
             <select name="Type">
-                <option value="series">Series</option>
                 <option value="movie">Movie</option>
+                <option value="series">Series</option>
             </select>
             <button type="submit" name="enter">nanti button ini ilangin di css bang </button>
         </form>
