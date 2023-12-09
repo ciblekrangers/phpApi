@@ -23,7 +23,7 @@ if (isset($_GET["enter"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOKKO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <!-- <link rel="stylesheet" href="itemshop.css" /> -->
+    <link rel="stylesheet" href="itemshop.css" />
 
     <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
 
@@ -85,7 +85,6 @@ if (isset($_GET["enter"])) {
             </div>
         </label>
     </header>
-
     <!-- View -->
     <section>
         <!-- start looping movies -->
@@ -94,7 +93,6 @@ if (isset($_GET["enter"])) {
                 <script>
                     alert("<?= $jsonMovies["Error"] ?>");
                 </script>
-                </div>
             <?php } else { ?>
                 <div class="container">
                     <?php foreach ($jsonMovies["Search"] as $row) { ?>
@@ -112,7 +110,6 @@ if (isset($_GET["enter"])) {
                         </div>
                     <?php }  ?>
                 <?php }  ?>
-
             <?php } ?>
             <!-- end looping movies -->
     </section>
